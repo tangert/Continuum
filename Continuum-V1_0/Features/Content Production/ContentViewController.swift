@@ -14,6 +14,8 @@ class ContentViewController: UIViewController {
 
     // MARK: IB Outlets
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var addCellFooter: UIView!
+    @IBOutlet weak var addCellButton: UIButton!
     
     // MARK: View lifecycle
     override func viewDidLoad() {
@@ -25,7 +27,6 @@ class ContentViewController: UIViewController {
         
         // Initial TableView setup
         tableView.estimatedRowHeight = 100
-        tableView.tableFooterView = UIView(frame: .zero) // removes the extra cells
     }
 }
 
@@ -45,7 +46,6 @@ extension ContentViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "WritingBlock", for: indexPath) as! WritingBlockController
-        
         cell.textView.delegate = self
         cell.selectionStyle = .none
         
@@ -63,5 +63,4 @@ extension ContentViewController: UITextViewDelegate {
             self.tableView.beginUpdates()
             self.tableView.endUpdates()
     }
-    
 }

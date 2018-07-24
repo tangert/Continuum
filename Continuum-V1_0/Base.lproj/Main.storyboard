@@ -37,6 +37,20 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="100" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6a9-zD-JRw">
                                 <rect key="frame" x="20" y="84" width="335" height="563"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="hwW-Uw-oyG">
+                                    <rect key="frame" x="0.0" y="128" width="335" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EA4-dU-AqY">
+                                            <rect key="frame" x="156" y="11" width="22" height="22"/>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="EA4-dU-AqY" firstAttribute="centerY" secondItem="hwW-Uw-oyG" secondAttribute="centerY" id="jiR-65-rC2"/>
+                                        <constraint firstItem="EA4-dU-AqY" firstAttribute="centerX" secondItem="hwW-Uw-oyG" secondAttribute="centerX" id="oZY-S7-xrU"/>
+                                    </constraints>
+                                </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WritingBlock" rowHeight="100" id="9kj-gZ-CPz" customClass="WritingBlockController" customModule="Continuum_V1_0" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="335" height="100"/>
@@ -45,15 +59,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="335" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DrG-oa-AwM">
-                                                    <rect key="frame" x="0.0" y="0.0" width="297" height="100"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="yRr-tJ-01h"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                </textView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="deA-fb-4rq">
                                                     <rect key="frame" x="305" y="0.0" width="30" height="65"/>
                                                     <subviews>
@@ -76,19 +81,28 @@
                                                         <constraint firstAttribute="height" constant="65" id="WHR-N6-YO5"/>
                                                     </constraints>
                                                 </stackView>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8my-kM-M4q">
+                                                    <rect key="frame" x="0.0" y="0.0" width="297" height="100"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="Osa-rX-zvP"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="DrG-oa-AwM" firstAttribute="top" secondItem="gSy-Vr-Rqy" secondAttribute="top" id="2CC-9f-ANy"/>
                                                 <constraint firstAttribute="trailing" secondItem="deA-fb-4rq" secondAttribute="trailing" id="933-fl-T5e"/>
-                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="DrG-oa-AwM" secondAttribute="bottom" id="Pln-Qd-85W"/>
-                                                <constraint firstItem="deA-fb-4rq" firstAttribute="leading" secondItem="DrG-oa-AwM" secondAttribute="trailing" constant="8" id="Ui4-7O-e9c"/>
-                                                <constraint firstItem="DrG-oa-AwM" firstAttribute="leading" secondItem="gSy-Vr-Rqy" secondAttribute="leading" id="Xkd-dB-i38"/>
+                                                <constraint firstItem="8my-kM-M4q" firstAttribute="leading" secondItem="gSy-Vr-Rqy" secondAttribute="leading" id="NoG-fO-BdN"/>
+                                                <constraint firstItem="8my-kM-M4q" firstAttribute="top" secondItem="gSy-Vr-Rqy" secondAttribute="top" id="R9t-iS-u4h"/>
+                                                <constraint firstItem="8my-kM-M4q" firstAttribute="centerY" secondItem="gSy-Vr-Rqy" secondAttribute="centerY" id="iAD-H0-bQ5"/>
+                                                <constraint firstItem="deA-fb-4rq" firstAttribute="leading" secondItem="8my-kM-M4q" secondAttribute="trailing" constant="8" id="mjn-UI-k31"/>
                                                 <constraint firstItem="deA-fb-4rq" firstAttribute="top" secondItem="gSy-Vr-Rqy" secondAttribute="top" id="zgw-FE-Ttw"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="locationButton" destination="tMd-Rf-SHW" id="Zbw-GZ-CYG"/>
-                                            <outlet property="textView" destination="DrG-oa-AwM" id="63r-6H-Jad"/>
+                                            <outlet property="textView" destination="8my-kM-M4q" id="yG7-Cc-BdN"/>
                                             <outlet property="timeButton" destination="5BB-df-sMR" id="EFd-Wa-pod"/>
                                         </connections>
                                     </tableViewCell>
@@ -117,6 +131,8 @@
                         </segmentedControl>
                     </navigationItem>
                     <connections>
+                        <outlet property="addCellButton" destination="EA4-dU-AqY" id="syG-mz-HIp"/>
+                        <outlet property="addCellFooter" destination="hwW-Uw-oyG" id="7Cq-CT-dQ2"/>
                         <outlet property="tableView" destination="6a9-zD-JRw" id="GaI-87-hSI"/>
                     </connections>
                 </viewController>
